@@ -4,7 +4,7 @@ require 'dependo'
 require 'r509/ocsp/responder/server'
 require 'r509/validity/crl'
 
-crl_paths = [File.join(File.dirname(__FILE__), 'ca/revoked.crl')]
+crl_paths = [File.expand_path('../ca/revoked.crl', __FILE__)]
 
 reload_interval = '5s' #yolo
 Dependo::Registry[:validity_checker] = R509::Validity::CRL::Checker.new(
