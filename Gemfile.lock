@@ -1,20 +1,42 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    dependo (0.2)
     haml (4.0.5)
       tilt
     kgio (2.9.2)
     r509 (0.10.0)
+    r509-ocsp-responder (0.3.3)
+      dependo
+      r509
+      r509-validity-redis (~> 0.4.0)
+      redis
+      sinatra
+    r509-validity-crl (0.1.1)
+      r509 (>= 0.9.0)
+      rake
+      rufus-scheduler (~> 3.0)
+    r509-validity-redis (0.4.2)
+      r509
+      rake
+      redis
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
     raindrops (0.13.0)
+    rake (10.3.2)
+    redis (3.1.0)
+    rufus-scheduler (3.0.5)
+      tzinfo
     sass (3.3.14)
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
+    thread_safe (0.3.4)
     tilt (1.4.1)
+    tzinfo (1.2.2)
+      thread_safe (~> 0.1)
     unicorn (4.8.3)
       kgio (~> 2.6)
       rack
@@ -26,6 +48,8 @@ PLATFORMS
 DEPENDENCIES
   haml
   r509
+  r509-ocsp-responder
+  r509-validity-crl
   sass
   sinatra
   unicorn
