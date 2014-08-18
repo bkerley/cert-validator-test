@@ -1,5 +1,7 @@
 require 'sinatra'
 
+require 'kramdown'
+
 require 'dependo'
 require 'r509/ocsp/responder/server'
 require 'r509/validity/crl'
