@@ -1,0 +1,50 @@
+!!! 5
+%html
+  %head
+    %title Ruby Cert Validator Testing Server
+    :sass
+      @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro|Raleway:300)
+      h1, h2
+        font-family: Raleway, Helvetica, sans-serif, Arial
+        font-weight: 300
+      p, li
+        font-family: "Source Sans Pro", Helvetica, sans-serif, Arial
+      body
+        background-color: #E89249
+        color: #100F2E
+      .content
+        width: 600px
+        margin: 10px auto
+  %body
+    .content
+      :markdown
+        # Ruby Cert Validator Testing Server
+
+        Hello! This is the testing server for the
+        [cert_validator](https://github.com/bkerley/cert_validator) Ruby
+        library. It provides OCSP and CRL endpoints for a few X.509 certificates.
+
+        If you're developing a tool that validates certificates against a
+        Certificate Revocation List (CRL) or Online Certificate Status
+        Protocol (OCSP), you can use this tool.
+
+        OCSP endpoint: [#{url('/ocsp')}](#{url('/ocsp')})
+        CRL endpoint: 
+
+        ## DO NOT USE THESE IN PRODUCTION
+
+        These key & certificate pairs are here for your testing convenience.
+        The private keys for them are public & well known. If you use them in
+        production, anyone can intercept and alter your communcations without
+        difficulty.
+
+        These are for testing use only.
+
+      %ul
+        - Dir.glob("./ca/*").each do |f|
+          %li
+            %a{href: File.basename(f)}&= File.basename(f)
+      
+      :markdown
+        For more information, please contact
+        [Bryce Kerley](mailto:bkerley@brycekerley.net).
