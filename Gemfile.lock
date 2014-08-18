@@ -5,6 +5,7 @@ GEM
     haml (4.0.5)
       tilt
     kgio (2.9.2)
+    kramdown (1.3.3)
     r509 (0.10.0)
     r509-ocsp-responder (0.3.3)
       dependo
@@ -47,6 +48,7 @@ PLATFORMS
 
 DEPENDENCIES
   haml
+  kramdown
   r509
   r509-ocsp-responder
   r509-validity-crl
