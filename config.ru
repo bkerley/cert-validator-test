@@ -32,7 +32,9 @@ get '/' do
 end
 
 get '/ocsp/*' do
-  ocsp_server.call env
+  path_info = env['PATH_INFO']
+  fixed_path_info = path_info.sub(/^\/ocsp/, '').sub("\n", '')
+  ocsp_server.call env.merge('PATH_INFO' => fixed_path_info)
 end
 
 run Sinatra::Application
