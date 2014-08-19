@@ -3,12 +3,12 @@ copy_nonce: true
 certificate_authorities:
   rcv_spec_ca:
     ca_cert:
-      cert: /app/ca/root.crt
-      key: /app/ca/root.key
+      cert: root.crt
+      key: root.key
     ocsp_start_skew_seconds: 3600
     ocsp_validity_hours: 168
-    crl_list_file: /app/ca/rcv_spec_list.txt
-    crl_number_file: /app/ca/rcv_spec_crlnumber.txt
+    crl_list_file: rcv_spec_list.txt
+    crl_number_file: rcv_spec_crlnumber.txt
     crl_validity_hours: 87600
     crl_md: SHA1
     profiles:
